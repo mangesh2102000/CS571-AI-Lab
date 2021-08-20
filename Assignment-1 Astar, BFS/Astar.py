@@ -33,7 +33,7 @@ class Astar:
 		while pq:
 			vertex = heappop(pq)
 			g_n = vertex.value - self.heuristicFunc(vertex.puzzle)
-			if self.distance[vertex.puzzle] > g_n:
+			if self.distance[vertex.puzzle] < g_n:
 				continue
 			self.exploredStates += 1
 
@@ -75,17 +75,19 @@ class Astar:
 
 
 
-a = [[1,4,3],[2,5,6],[8,7,0]]
+a = [[1,2,3],[4,5,6],[0,7,8]]
 p = Puzzle(a)
 
 astars = []
 for heuristic, heuristicFunc in heuristicFuncList.items():
 	astars.append(Astar(heuristic,heuristicFunc,p))
 
-paths = [astar.run() for astar in astars]
+path = astars[0].run()
 
-for path in paths:
-	path.reverse()
+path.reverse()
+
+for step in path:
+	print(step)
 
 
 
