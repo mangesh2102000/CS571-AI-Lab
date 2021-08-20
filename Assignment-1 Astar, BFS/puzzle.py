@@ -61,10 +61,3 @@ heuristicFuncList = {
 	"displaceCost": displaceCost,
 	"manhattanCost": manhattanCost
 }
-
-a = a = [[1,2,3],[4,5,6],[0,7,8]]
-p = Puzzle(a)
-
-q = p.newConfig(2,0,2,1)
-print(q)
-print(p)
