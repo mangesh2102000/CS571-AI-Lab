@@ -75,19 +75,20 @@ class Astar:
 
 
 
-a = [[1,2,3],[4,5,6],[0,7,8]]
+a = [[1,2,3],[4,5,6],[7,0,8]]
 p = Puzzle(a)
 
 astars = []
 for heuristic, heuristicFunc in heuristicFuncList.items():
 	astars.append(Astar(heuristic,heuristicFunc,p))
 
-path = astars[0].run()
+paths = [astar.run() for astar in astars]
 
-path.reverse()
-
-for step in path:
-	print(step)
-
-
-
+for idx, path in enumerate(paths):
+	print(astars[idx].heuristic,"heuristics' explored states:",astars[idx].exploredStates)
+	path.reverse()
+	if not path:
+		print("No path available")
+	for step in path:
+		print(step)
+	print("------------------------------")
