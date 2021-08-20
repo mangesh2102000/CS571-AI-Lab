@@ -11,6 +11,18 @@ class Puzzle:
 	def __eq__(self, puzzle):
 		return self.puzzleConfig == puzzle.puzzleConfig
 
+	def __hash__(self):
+		pass
+
+	def newConfig(self, X, Y, nX, nY):
+		newPuzzle = Puzzle(self.puzzleConfig)
+		newPuzzle.puzzleConfig[X][Y], newPuzzle.puzzleConfig[nX][nY] = newPuzzle.puzzleConfig[nX][nY], newPuzzle.puzzleConfig[X][Y]
+
+		return newPuzzle
+
+	def isGoal(self):
+		return GOAL_STATE == self.puzzleConfig
+
 	@staticmethod
 	def findCell(puzzleConfig, num):
 		for i in range(3):
