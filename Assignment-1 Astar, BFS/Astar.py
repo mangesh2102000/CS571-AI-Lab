@@ -26,7 +26,7 @@ class Astar:
 		pq = []
 		f_n = 0 + self.heuristicFunc(self.puzzle)
 		self.distance[self.puzzle] = 0
-		node = Node(f_n, self.puzzle)
+		node = self.Node(f_n, self.puzzle)
 		heappush(pq, node)
 
 		curr_node = None
@@ -56,14 +56,14 @@ class Astar:
 				newPuzzle = vertex.puzzle.newConfig(blankX,blankY,newX,newY)
 				if newPuzzle not in self.distance:
 					self.distance[newPuzzle] = g_n+1
-					f_n = g_n+1+self.heuristicFunc(self.newPuzzle)
-					node = Node(f_n,newPuzzle,vertex)
+					f_n = g_n+1+self.heuristicFunc(newPuzzle)
+					node = self.Node(f_n,newPuzzle,vertex)
 					heappush(pq, node)
 
 				elif g_n+1 < self.distance[newPuzzle]:
 					self.distance[newPuzzle] = g_n+1
-					f_n = g_n+1+self.heuristicFunc(self.newPuzzle)
-					node = Node(f_n,newPuzzle,vertex)
+					f_n = g_n+1+self.heuristicFunc(newPuzzle)
+					node = self.Node(f_n,newPuzzle,vertex)
 					heappush(pq, node)
 
 		path = []
@@ -84,5 +84,8 @@ for heuristic, heuristicFunc in heuristicFuncList.items():
 
 paths = [astar.run() for astar in astars]
 
-print(len(paths))
+for path in paths:
+	path.reverse()
+
+
 
