@@ -1,3 +1,6 @@
+# Driver Code
+
+# Import Required Functionalities 
 from Utils import *
 from puzzle import Puzzle, heuristicFuncList
 from BFS import BFS
@@ -5,9 +8,11 @@ from Astar import Astar
 from time import time
 import sys
 
+# Input
 START_STATE = inputFromFile('StartState')
 GOAL_STATE  = inputFromFile('GoalState')
 
+# Check for Valid Input
 if not Puzzle.legitPuzzle(START_STATE) or not Puzzle.legitPuzzle(GOAL_STATE):
     print("Error: Puzzle Tiles configuration is invalid")
     print("\nStart State :")

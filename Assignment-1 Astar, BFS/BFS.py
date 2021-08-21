@@ -1,9 +1,12 @@
+# Best First Search (BFS) Algorithm
+
+# Import Required Functionalities 
 from puzzle import Puzzle, heuristicFuncList
 from heapq import heappush, heappop
 from time import time
 
 class BFS:
-	#f(n) = h(n)
+	# Cost Function f(n) = h(n)
 	def __init__(self,heuristic,heuristicFunc,puzzle):
 		self.heuristic = heuristic
 		self.heuristicFunc = heuristicFunc
@@ -24,6 +27,7 @@ class BFS:
 			return self.value < other.value
 
 	def run(self):
+
 		start_time = time()
 		pq = []
 		f_n = self.heuristicFunc(self.puzzle)
@@ -34,17 +38,19 @@ class BFS:
 		curr_node = None
 		while pq:
 			vertex = heappop(pq)
-			# g_n = vertex.value - self.heuristicFunc(vertex.puzzle)
 			if vertex.parent == None:
 				g_n = 0
 			else :
 				g_n = self.distance[vertex.parent.puzzle] + 1
 
+			# Skip to next Node(state) if current selection is suboptimal
 			if self.distance[vertex.puzzle] < g_n:
 				continue
-				
+			
+			# Increment count of Explored States
 			self.exploredStates += 1
 
+			# Goal State Reached
 			if vertex.puzzle.isGoal():
 				curr_node = vertex
 				break
@@ -62,25 +68,26 @@ class BFS:
 					continue
 
 				newPuzzle = vertex.puzzle.newConfig(blankX,blankY,newX,newY)
+				
 				if newPuzzle not in self.distance:
 					self.distance[newPuzzle] = g_n+1
-					# f_n = g_n+1+self.heuristicFunc(newPuzzle)
 					f_n = self.heuristicFunc(newPuzzle)
 					node = self.Node(f_n,newPuzzle,vertex)
 					heappush(pq, node)
 
 				elif g_n+1 < self.distance[newPuzzle]:
 					self.distance[newPuzzle] = g_n+1
-					# f_n = g_n+1+self.heuristicFunc(newPuzzle)
 					f_n = self.heuristicFunc(newPuzzle)
 					node = self.Node(f_n,newPuzzle,vertex)
 					heappush(pq, node)
 
+		# Store path from START_STATE to GOAL_STATE if exists
 		path = []
 		while curr_node:
 			path.append(curr_node.puzzle)
 			curr_node = curr_node.parent
 
+		# Calculate execution time
 		exec_time = time()-start_time
 		
 		return exec_time, path

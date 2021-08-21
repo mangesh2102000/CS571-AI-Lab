@@ -1,3 +1,5 @@
+# This File contains functions to help with input and output 
+
 def inputFromFile(filename):
 	file = open(filename, 'r')
 	data = []
