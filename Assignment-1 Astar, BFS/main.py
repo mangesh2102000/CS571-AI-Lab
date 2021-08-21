@@ -15,6 +15,7 @@ if not Puzzle.legitPuzzle(START_STATE) or not Puzzle.legitPuzzle(GOAL_STATE):
 
     print("Goal State :")
     print(convertToInputFormat(Puzzle.GOAL_STATE))
+    sys.exit()
 
 if GOAL_STATE: 
     Puzzle.GOAL_STATE = GOAL_STATE
