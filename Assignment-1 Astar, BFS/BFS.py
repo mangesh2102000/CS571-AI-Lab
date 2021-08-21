@@ -1,6 +1,6 @@
-from Utils import *
 from puzzle import Puzzle, heuristicFuncList
 from heapq import heappush, heappop
+from time import time
 
 class BFS:
 	#f(n) = h(n)
@@ -24,6 +24,7 @@ class BFS:
 			return self.value < other.value
 
 	def run(self):
+		start_time = time()
 		pq = []
 		f_n = self.heuristicFunc(self.puzzle)
 		self.distance[self.puzzle] = 0
@@ -80,54 +81,6 @@ class BFS:
 			path.append(curr_node.puzzle)
 			curr_node = curr_node.parent
 
-		return path
-
-
-START_STATE = inputFromFile('StartState')
-p = Puzzle(START_STATE)
-
-BFSs = []
-for heuristic, heuristicFunc in heuristicFuncList.items():
-	BFSs.append(BFS(heuristic,heuristicFunc,p))
-
-paths = [BFS.run() for BFS in BFSs]
-
-for idx, path in enumerate(paths):
-	import time
-	start_time = time.time();
-	print(BFSs[idx].heuristic,"heuristics")
-	exec_time = time.time() - start_time;
-
-	path.reverse()
-	if not path:
-		print("\nNo path available")
-
-		print("\nStart State :")
-		print(convertToInputFormat(START_STATE))
-
-		print("Goal State :")
-		print(convertToInputFormat(Puzzle.GOAL_STATE))
-
-		print("Total number of states explored before termination :",BFSs[idx].exploredStates)
-		print("-----------------------------------------------------")
-	else:
-		print("\nPath exists")
-	
-		print("\nStart State :")
-		print(convertToInputFormat(START_STATE))
-
-		print("Goal State :")
-		print(convertToInputFormat(Puzzle.GOAL_STATE))
-
-		print("Total number of states explored :",BFSs[idx].exploredStates)
+		exec_time = time()-start_time
 		
-		print("\nTotal number of states to optimal path : ", len(path))
-		
-		print("\nOptimal Path :")
-		for step in path:
-			print(step)
-
-		print("\nOptimal Path Cost :", len(path)-1)
-
-		print("\nTime Taken For Execution :", exec_time, "seconds")
-		print("-----------------------------------------------------")
+		return exec_time, path
