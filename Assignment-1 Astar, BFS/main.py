@@ -31,7 +31,8 @@ def RunBFS():
 
     exec_info = [bfs.run() for bfs in processes]
 
-    for idx, exec_time, path in enumerate(exec_info):
+    for idx, value in enumerate(exec_info):
+        exec_time, path = value
         print(processes[idx].heuristic,"heuristics")
         
         path.reverse()
@@ -55,13 +56,13 @@ def RunBFS():
             print("Goal State :")
             print(convertToInputFormat(Puzzle.GOAL_STATE))
 
-            print("Total number of states explored :",BFSs[idx].exploredStates)
+            print("Total number of states explored :",processes[idx].exploredStates)
             
             print("\nTotal number of states to optimal path : ", len(path))
             
             print("\nOptimal Path :")
             for step in path:
-                print(convertToInputFormat(step))
+                print(convertToInputFormat(step.puzzleConfig))
 
             print("\nOptimal Path Cost :", len(path)-1)
 
@@ -76,7 +77,8 @@ def RunAstar():
 
     exec_info = [astar.run() for astar in processes]
 
-    for idx, exec_time, path in enumerate(exec_info):
+    for idx, value in enumerate(exec_info):
+        exec_time, path = value
         print(processes[idx].heuristic,"heuristics")
         
         path.reverse()
@@ -100,16 +102,21 @@ def RunAstar():
             print("Goal State :")
             print(convertToInputFormat(Puzzle.GOAL_STATE))
 
-            print("Total number of states explored :",BFSs[idx].exploredStates)
+            print("Total number of states explored :",processes[idx].exploredStates)
             
             print("\nTotal number of states to optimal path : ", len(path))
             
             print("\nOptimal Path :")
             for step in path:
-                print(convertToInputFormat(step))
+                print(convertToInputFormat(step.puzzleConfig))
 
             print("\nOptimal Path Cost :", len(path)-1)
 
             print("\nTime Taken For Execution :", exec_time, "seconds")
             print("-----------------------------------------------------")
 
+if __name__ == '__main__':
+    print("Running BFS on the puzzle tile configuration\n")
+    RunBFS()
+    print("Running Astar on the puzzle tile configuration\n")
+    RunAstar()
