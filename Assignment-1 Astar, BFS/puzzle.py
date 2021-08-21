@@ -1,10 +1,14 @@
 #This File contains Puzzle class and heuristic function definitions
 #For helping the implementation of A-star and BFS algorithms
 from copy import deepcopy
+from Utils import *
+
 class Puzzle:
 	#Blank tile is considered to be 0.
 	#Matrix size should always be 3x3
-	GOAL_STATE = [[1,2,3],[8,0,4],[7,6,5]]
+
+	GOAL_STATE = inputFromFile('GoalState');
+
 	def __init__(self,puzzleConfig):
 		self.puzzleConfig = puzzleConfig
 
@@ -38,7 +42,6 @@ class Puzzle:
 					return (i,j)
 		return (-1,-1)
 
-
 def displaceCost(puzzle: Puzzle):
 	num_of_displaced_tiles = 0
 	for i in range(3):
@@ -61,3 +64,4 @@ heuristicFuncList = {
 	"displaceCost": displaceCost,
 	"manhattanCost": manhattanCost
 }
+

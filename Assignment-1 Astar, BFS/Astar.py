@@ -1,3 +1,4 @@
+from Utils import *
 from puzzle import Puzzle, heuristicFuncList
 from heapq import heappush, heappop
 
@@ -75,8 +76,8 @@ class Astar:
 
 
 
-a = [[8,3,5],[4,1,6],[2,7,0]]
-p = Puzzle(a)
+START_STATE = inputFromFile('StartState')
+p = Puzzle(START_STATE)
 
 astars = []
 for heuristic, heuristicFunc in heuristicFuncList.items():
@@ -85,10 +86,41 @@ for heuristic, heuristicFunc in heuristicFuncList.items():
 paths = [astar.run() for astar in astars]
 
 for idx, path in enumerate(paths):
-	print(astars[idx].heuristic,"heuristics' explored states:",astars[idx].exploredStates)
+	import time
+	start_time = time.time();
+	print(astars[idx].heuristic,"heuristics")
+	exec_time = time.time() - start_time;
+
 	path.reverse()
 	if not path:
-		print("No path available")
-	for step in path:
-		print(step)
-	print("------------------------------")
+		print("\nNo path available")
+
+		print("\nStart State :")
+		print(convertToInputFormat(START_STATE))
+
+		print("Goal State :")
+		print(convertToInputFormat(Puzzle.GOAL_STATE))
+
+		print("Total number of states explored before termination :",astars[idx].exploredStates)
+		print("-----------------------------------------------------")
+	else:
+		print("\nPath exists")
+	
+		print("\nStart State :")
+		print(convertToInputFormat(START_STATE))
+
+		print("Goal State :")
+		print(convertToInputFormat(Puzzle.GOAL_STATE))
+
+		print("Total number of states explored :",astars[idx].exploredStates)
+		
+		print("\nTotal number of states to optimal path : ", len(path))
+		
+		print("\nOptimal Path :")
+		for step in path:
+			print(step)
+
+		print("\nOptimal Path Cost :", len(path)-1)
+
+		print("\nTime Taken For Execution :", exec_time, "seconds")
+		print("-----------------------------------------------------")
