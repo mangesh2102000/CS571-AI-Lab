@@ -71,12 +71,11 @@ class BFS:
 				
 				if newPuzzle in self.distance:
 					continue
-
-				if newPuzzle not in self.distance:
-					self.distance[newPuzzle] = g_n+1
-					f_n = self.heuristicFunc(newPuzzle)
-					node = self.Node(f_n,newPuzzle,vertex)
-					heappush(pq, node)
+				
+				self.distance[newPuzzle] = g_n+1
+				f_n = self.heuristicFunc(newPuzzle)
+				node = self.Node(f_n,newPuzzle,vertex)
+				heappush(pq, node)
 
 		# Store path from START_STATE to GOAL_STATE if exists
 		path = []
