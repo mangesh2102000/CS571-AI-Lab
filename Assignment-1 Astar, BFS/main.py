@@ -50,7 +50,7 @@ def RunBFS():
             print("Goal State :")
             print(convertToInputFormat(Puzzle.GOAL_STATE))
 
-            print("Total number of states explored before termination :",BFSs[idx].exploredStates)
+            print("Total number of states explored before termination :",processes[idx].exploredStates)
             print("-----------------------------------------------------")
         else:
             print("\nPath exists")
@@ -96,7 +96,7 @@ def RunAstar():
             print("Goal State :")
             print(convertToInputFormat(Puzzle.GOAL_STATE))
 
-            print("Total number of states explored before termination :",BFSs[idx].exploredStates)
+            print("Total number of states explored before termination :",processes[idx].exploredStates)
             print("-----------------------------------------------------")
         else:
             print("\nPath exists")
