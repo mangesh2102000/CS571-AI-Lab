@@ -6,7 +6,6 @@ class Puzzle:
 	#Blank tile is considered to be 0.
 	#Matrix size should always be 3x3
 
-	#Default GOAL_STATE
 	GOAL_STATE = [[1,2,3],[4,5,6],[7,8,0]]
 
 	def __init__(self,puzzleConfig):
@@ -55,7 +54,6 @@ class Puzzle:
 				return False
 		return True
 
-# Funtion definition for h1(n) = number of tiles displaced from their destined position
 def displaceCost(puzzle: Puzzle):
 	num_of_displaced_tiles = 0
 	for i in range(3):
@@ -65,17 +63,15 @@ def displaceCost(puzzle: Puzzle):
 
 	return num_of_displaced_tiles
 
-# Function definition for h2(n) = sum of Manhattan distance of each tile from the goal position
 def manhattanCost(puzzle: Puzzle):
 	total_cost = 0
-	for i in range(9):
+	for i in range(1,9):
 		x1, y1 = Puzzle.findCell(puzzle.puzzleConfig, i)
 		x2, y2 = Puzzle.findCell(puzzle.GOAL_STATE, i)
 
 		total_cost += abs(x1-x2)+abs(y1-y2)
 	return total_cost
 
-# List of heuristic Funtions
 heuristicFuncList = {
 	"displaceCost": displaceCost,
 	"manhattanCost": manhattanCost
