@@ -46,14 +46,14 @@ class BFS:
 			# Skip to next Node(state) if current selection is suboptimal
 			if self.distance[vertex.puzzle] < g_n:
 				continue
-			
-			# Increment count of Explored States
-			self.exploredStates += 1
 
 			# Goal State Reached
 			if vertex.puzzle.isGoal():
 				curr_node = vertex
 				break
+
+			# Increment count of Explored States
+			self.exploredStates += 1
 
 			#explore adjacent nodes
 			#find blank cell
