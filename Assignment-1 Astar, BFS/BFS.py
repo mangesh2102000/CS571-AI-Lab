@@ -69,13 +69,10 @@ class BFS:
 
 				newPuzzle = vertex.puzzle.newConfig(blankX,blankY,newX,newY)
 				
-				if newPuzzle not in self.distance:
-					self.distance[newPuzzle] = g_n+1
-					f_n = self.heuristicFunc(newPuzzle)
-					node = self.Node(f_n,newPuzzle,vertex)
-					heappush(pq, node)
+				if newPuzzle in self.distance:
+					continue
 
-				elif g_n+1 < self.distance[newPuzzle]:
+				if newPuzzle not in self.distance:
 					self.distance[newPuzzle] = g_n+1
 					f_n = self.heuristicFunc(newPuzzle)
 					node = self.Node(f_n,newPuzzle,vertex)
