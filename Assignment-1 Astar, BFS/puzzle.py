@@ -58,6 +58,8 @@ def displaceCost(puzzle: Puzzle):
 	num_of_displaced_tiles = 0
 	for i in range(3):
 		for j in range(3):
+			if puzzle.puzzleConfig[i][j] == 0:
+				continue
 			if puzzle.puzzleConfig[i][j] != puzzle.GOAL_STATE[i][j]:
 				num_of_displaced_tiles += 1
 
