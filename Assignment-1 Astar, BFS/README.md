@@ -8,7 +8,6 @@
 |------|-----------|
 |GroupID | 1801cs12_1801cs16_1801cs22 | 
 |Date | 25/08/2021  |
-
 |1801CS12 | Bablu Kumar  |
 |1801CS16 | Mangesh Chandrawanshi|  
 |1801CS22 | Hrishabh Raj  |
