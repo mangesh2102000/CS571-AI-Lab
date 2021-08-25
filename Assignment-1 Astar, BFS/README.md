@@ -1,7 +1,9 @@
 
-CS561 - ARTIFICIAL INTELLIGENCE LAB  
-ASSIGNMENT-1: A* Search, BFS  
-  
+# CS561 - ARTIFICIAL INTELLIGENCE LAB  
+## ASSIGNMENT-1: A* Search, BFS  
+
+### Group Information  
+----------------------
 GroupID : 1801cs12_1801cs16_1801cs22  
 Date : 25/08/2021  
   
@@ -9,7 +11,8 @@ Date : 25/08/2021
 1801CS16 : Mangesh Chandrawanshi  
 1801CS22 : Hrishabh Raj  
   
-Contents 
+### Contents 
+--------------
 
 	main.py : driver code
 	puzzle.py : puzzle Class, heuristic functions
@@ -19,7 +22,8 @@ Contents
 	StartState : Input file for start state
 	GoalState : Input file for goal state
 
-Usage 
+### Usage 
+----------
 
 Sample Input :
 
@@ -35,7 +39,8 @@ Sample Input :
 
 Note: Avoid extra whitespaces/newlines while providing input throught these files
 
-Execution :
+### Execution :
+----------------
 
 	python main.py 
 
