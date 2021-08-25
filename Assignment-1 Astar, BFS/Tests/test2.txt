@@ -14,9 +14,9 @@ T1 T2 T3
 T4 T5 T6 
 T7 T8 B 
 
-Total number of states explored : 313
+Total number of states explored : 1316
 
-Total number of states to optimal path :  76
+Total number of states to optimal path :  130
 
 Optimal Path :
 T8 T6 T7 
@@ -71,262 +71,478 @@ T2 B T8
 T3 T5 T6 
 T1 T4 T7 
 
-T2 T5 T8 
-T3 B T6 
+B T2 T8 
+T3 T5 T6 
 T1 T4 T7 
 
-T2 T5 T8 
-T3 T4 T6 
-T1 B T7 
-
-T2 T5 T8 
-T3 T4 T6 
-B T1 T7 
-
-T2 T5 T8 
-B T4 T6 
-T3 T1 T7 
-
-T2 T5 T8 
-T4 B T6 
-T3 T1 T7 
-
-T2 B T8 
-T4 T5 T6 
-T3 T1 T7 
-
-B T2 T8 
-T4 T5 T6 
-T3 T1 T7 
-
-T4 T2 T8 
+T3 T2 T8 
 B T5 T6 
-T3 T1 T7 
+T1 T4 T7 
 
-T4 T2 T8 
-T3 T5 T6 
-B T1 T7 
+T3 T2 T8 
+T1 T5 T6 
+B T4 T7 
 
-T4 T2 T8 
-T3 T5 T6 
-T1 B T7 
+T3 T2 T8 
+T1 T5 T6 
+T4 B T7 
 
-T4 T2 T8 
-T3 B T6 
-T1 T5 T7 
+T3 T2 T8 
+T1 B T6 
+T4 T5 T7 
 
-T4 T2 T8 
-B T3 T6 
-T1 T5 T7 
+T3 T2 T8 
+B T1 T6 
+T4 T5 T7 
 
-B T2 T8 
-T4 T3 T6 
-T1 T5 T7 
+T3 T2 T8 
+T4 T1 T6 
+B T5 T7 
 
-T2 B T8 
-T4 T3 T6 
-T1 T5 T7 
+T3 T2 T8 
+T4 T1 T6 
+T5 B T7 
 
-T2 T3 T8 
-T4 B T6 
-T1 T5 T7 
+T3 T2 T8 
+T4 T1 T6 
+T5 T7 B 
 
-T2 T3 T8 
-T4 T5 T6 
-T1 B T7 
+T3 T2 T8 
+T4 T1 B 
+T5 T7 T6 
 
-T2 T3 T8 
-T4 T5 T6 
-T1 T7 B 
+T3 T2 T8 
+T4 B T1 
+T5 T7 T6 
 
-T2 T3 T8 
-T4 T5 B 
-T1 T7 T6 
+T3 T2 T8 
+B T4 T1 
+T5 T7 T6 
 
-T2 T3 B 
-T4 T5 T8 
-T1 T7 T6 
-
-T2 B T3 
-T4 T5 T8 
-T1 T7 T6 
-
-B T2 T3 
-T4 T5 T8 
-T1 T7 T6 
-
-T4 T2 T3 
-B T5 T8 
-T1 T7 T6 
-
-T4 T2 T3 
-T1 T5 T8 
+T3 T2 T8 
+T5 T4 T1 
 B T7 T6 
 
-T4 T2 T3 
-T1 T5 T8 
+T3 T2 T8 
+T5 T4 T1 
 T7 B T6 
 
-T4 T2 T3 
-T1 B T8 
-T7 T5 T6 
+T3 T2 T8 
+T5 B T1 
+T7 T4 T6 
 
-T4 T2 T3 
-T1 T8 B 
-T7 T5 T6 
+T3 T2 T8 
+B T5 T1 
+T7 T4 T6 
 
-T4 T2 T3 
-T1 T8 T6 
-T7 T5 B 
+B T2 T8 
+T3 T5 T1 
+T7 T4 T6 
 
-T4 T2 T3 
-T1 T8 T6 
-T7 B T5 
+T2 B T8 
+T3 T5 T1 
+T7 T4 T6 
 
-T4 T2 T3 
-T1 B T6 
-T7 T8 T5 
+T2 T8 B 
+T3 T5 T1 
+T7 T4 T6 
 
-T4 T2 T3 
-B T1 T6 
-T7 T8 T5 
+T2 T8 T1 
+T3 T5 B 
+T7 T4 T6 
 
-B T2 T3 
-T4 T1 T6 
-T7 T8 T5 
+T2 T8 T1 
+T3 T5 T6 
+T7 T4 B 
+
+T2 T8 T1 
+T3 T5 T6 
+T7 B T4 
+
+T2 T8 T1 
+T3 B T6 
+T7 T5 T4 
+
+T2 T8 T1 
+B T3 T6 
+T7 T5 T4 
+
+B T8 T1 
+T2 T3 T6 
+T7 T5 T4 
+
+T8 B T1 
+T2 T3 T6 
+T7 T5 T4 
+
+T8 T3 T1 
+T2 B T6 
+T7 T5 T4 
+
+T8 T3 T1 
+T2 T5 T6 
+T7 B T4 
+
+T8 T3 T1 
+T2 T5 T6 
+T7 T4 B 
+
+T8 T3 T1 
+T2 T5 B 
+T7 T4 T6 
+
+T8 T3 B 
+T2 T5 T1 
+T7 T4 T6 
+
+T8 B T3 
+T2 T5 T1 
+T7 T4 T6 
+
+B T8 T3 
+T2 T5 T1 
+T7 T4 T6 
+
+T2 T8 T3 
+B T5 T1 
+T7 T4 T6 
+
+T2 T8 T3 
+T5 B T1 
+T7 T4 T6 
+
+T2 T8 T3 
+T5 T1 B 
+T7 T4 T6 
+
+T2 T8 T3 
+T5 T1 T6 
+T7 T4 B 
+
+T2 T8 T3 
+T5 T1 T6 
+T7 B T4 
+
+T2 T8 T3 
+T5 B T6 
+T7 T1 T4 
 
 T2 B T3 
-T4 T1 T6 
-T7 T8 T5 
+T5 T8 T6 
+T7 T1 T4 
 
-T2 T3 B 
-T4 T1 T6 
-T7 T8 T5 
+B T2 T3 
+T5 T8 T6 
+T7 T1 T4 
 
-T2 T3 T6 
-T4 T1 B 
-T7 T8 T5 
+T5 T2 T3 
+B T8 T6 
+T7 T1 T4 
 
-T2 T3 T6 
-T4 B T1 
-T7 T8 T5 
+T5 T2 T3 
+T7 T8 T6 
+B T1 T4 
 
-T2 B T6 
-T4 T3 T1 
-T7 T8 T5 
+T5 T2 T3 
+T7 T8 T6 
+T1 B T4 
 
+T5 T2 T3 
+T7 B T6 
+T1 T8 T4 
+
+T5 B T3 
+T7 T2 T6 
+T1 T8 T4 
+
+B T5 T3 
+T7 T2 T6 
+T1 T8 T4 
+
+T7 T5 T3 
 B T2 T6 
-T4 T3 T1 
-T7 T8 T5 
+T1 T8 T4 
 
-T4 T2 T6 
-B T3 T1 
-T7 T8 T5 
-
-T4 T2 T6 
-T3 B T1 
-T7 T8 T5 
-
-T4 T2 T6 
-T3 T1 B 
-T7 T8 T5 
-
-T4 T2 B 
-T3 T1 T6 
-T7 T8 T5 
-
-T4 B T2 
-T3 T1 T6 
-T7 T8 T5 
-
-T4 T1 T2 
-T3 B T6 
-T7 T8 T5 
-
-T4 T1 T2 
-B T3 T6 
-T7 T8 T5 
-
-B T1 T2 
-T4 T3 T6 
-T7 T8 T5 
-
-T1 B T2 
-T4 T3 T6 
-T7 T8 T5 
-
-T1 T2 B 
-T4 T3 T6 
-T7 T8 T5 
-
+T7 T5 T3 
 T1 T2 T6 
-T4 T3 B 
-T7 T8 T5 
+B T8 T4 
 
+T7 T5 T3 
 T1 T2 T6 
-T4 T3 T5 
+T8 B T4 
+
+T7 T5 T3 
+T1 B T6 
+T8 T2 T4 
+
+T7 B T3 
+T1 T5 T6 
+T8 T2 T4 
+
+B T7 T3 
+T1 T5 T6 
+T8 T2 T4 
+
+T1 T7 T3 
+B T5 T6 
+T8 T2 T4 
+
+T1 T7 T3 
+T5 B T6 
+T8 T2 T4 
+
+T1 T7 T3 
+T5 T2 T6 
+T8 B T4 
+
+T1 T7 T3 
+T5 T2 T6 
+B T8 T4 
+
+T1 T7 T3 
+B T2 T6 
+T5 T8 T4 
+
+B T7 T3 
+T1 T2 T6 
+T5 T8 T4 
+
+T7 B T3 
+T1 T2 T6 
+T5 T8 T4 
+
+T7 T2 T3 
+T1 B T6 
+T5 T8 T4 
+
+T7 T2 T3 
+B T1 T6 
+T5 T8 T4 
+
+T7 T2 T3 
+T5 T1 T6 
+B T8 T4 
+
+T7 T2 T3 
+T5 T1 T6 
+T8 B T4 
+
+T7 T2 T3 
+T5 B T6 
+T8 T1 T4 
+
+T7 T2 T3 
+B T5 T6 
+T8 T1 T4 
+
+B T2 T3 
+T7 T5 T6 
+T8 T1 T4 
+
+T2 B T3 
+T7 T5 T6 
+T8 T1 T4 
+
+T2 T5 T3 
+T7 B T6 
+T8 T1 T4 
+
+T2 T5 T3 
+T7 T1 T6 
+T8 B T4 
+
+T2 T5 T3 
+T7 T1 T6 
+B T8 T4 
+
+T2 T5 T3 
+B T1 T6 
+T7 T8 T4 
+
+T2 T5 T3 
+T1 B T6 
+T7 T8 T4 
+
+T2 B T3 
+T1 T5 T6 
+T7 T8 T4 
+
+B T2 T3 
+T1 T5 T6 
+T7 T8 T4 
+
+T1 T2 T3 
+B T5 T6 
+T7 T8 T4 
+
+T1 T2 T3 
+T5 B T6 
+T7 T8 T4 
+
+T1 T2 T3 
+T5 T6 B 
+T7 T8 T4 
+
+T1 T2 T3 
+T5 T6 T4 
 T7 T8 B 
 
-T1 T2 T6 
-T4 T3 T5 
+T1 T2 T3 
+T5 T6 T4 
 T7 B T8 
 
-T1 T2 T6 
-T4 B T5 
-T7 T3 T8 
+T1 T2 T3 
+T5 B T4 
+T7 T6 T8 
 
-T1 T2 T6 
-T4 T5 B 
-T7 T3 T8 
+T1 T2 T3 
+B T5 T4 
+T7 T6 T8 
 
-T1 T2 B 
-T4 T5 T6 
-T7 T3 T8 
+T1 T2 T3 
+T7 T5 T4 
+B T6 T8 
 
-T1 B T2 
-T4 T5 T6 
-T7 T3 T8 
+T1 T2 T3 
+T7 T5 T4 
+T6 B T8 
 
-T1 T5 T2 
+T1 T2 T3 
+T7 T5 T4 
+T6 T8 B 
+
+T1 T2 T3 
+T7 T5 B 
+T6 T8 T4 
+
+T1 T2 T3 
+T7 B T5 
+T6 T8 T4 
+
+T1 T2 T3 
+T7 T8 T5 
+T6 B T4 
+
+T1 T2 T3 
+T7 T8 T5 
+B T6 T4 
+
+T1 T2 T3 
+B T8 T5 
+T7 T6 T4 
+
+T1 T2 T3 
+T8 B T5 
+T7 T6 T4 
+
+T1 T2 T3 
+T8 T5 B 
+T7 T6 T4 
+
+T1 T2 T3 
+T8 T5 T4 
+T7 T6 B 
+
+T1 T2 T3 
+T8 T5 T4 
+T7 B T6 
+
+T1 T2 T3 
+T8 B T4 
+T7 T5 T6 
+
+T1 T2 T3 
+T8 T4 B 
+T7 T5 T6 
+
+T1 T2 T3 
+T8 T4 T6 
+T7 T5 B 
+
+T1 T2 T3 
+T8 T4 T6 
+T7 B T5 
+
+T1 T2 T3 
+T8 T4 T6 
+B T7 T5 
+
+T1 T2 T3 
+B T4 T6 
+T8 T7 T5 
+
+T1 T2 T3 
 T4 B T6 
-T7 T3 T8 
-
-T1 T5 T2 
-T4 T3 T6 
-T7 B T8 
-
-T1 T5 T2 
-T4 T3 T6 
-T7 T8 B 
-
-T1 T5 T2 
-T4 T3 B 
-T7 T8 T6 
-
-T1 T5 T2 
-T4 B T3 
-T7 T8 T6 
-
-T1 B T2 
-T4 T5 T3 
-T7 T8 T6 
-
-T1 T2 B 
-T4 T5 T3 
-T7 T8 T6 
+T8 T7 T5 
 
 T1 T2 T3 
-T4 T5 B 
-T7 T8 T6 
+T4 T7 T6 
+T8 B T5 
+
+T1 T2 T3 
+T4 T7 T6 
+T8 T5 B 
+
+T1 T2 T3 
+T4 T7 B 
+T8 T5 T6 
+
+T1 T2 T3 
+T4 B T7 
+T8 T5 T6 
+
+T1 T2 T3 
+T4 T5 T7 
+T8 B T6 
+
+T1 T2 T3 
+T4 T5 T7 
+B T8 T6 
+
+T1 T2 T3 
+B T5 T7 
+T4 T8 T6 
+
+T1 T2 T3 
+T5 B T7 
+T4 T8 T6 
+
+T1 T2 T3 
+T5 T7 B 
+T4 T8 T6 
+
+T1 T2 T3 
+T5 T7 T6 
+T4 T8 B 
+
+T1 T2 T3 
+T5 T7 T6 
+T4 B T8 
+
+T1 T2 T3 
+T5 B T6 
+T4 T7 T8 
+
+T1 T2 T3 
+B T5 T6 
+T4 T7 T8 
+
+T1 T2 T3 
+T4 T5 T6 
+B T7 T8 
+
+T1 T2 T3 
+T4 T5 T6 
+T7 B T8 
 
 T1 T2 T3 
 T4 T5 T6 
 T7 T8 B 
 
 
-Optimal Path Cost : 75
+Optimal Path Cost : 129
 
-Time Taken For Execution : 0.027999401092529297 seconds
+Time Taken For Execution : 0.1040048599243164 seconds
 -----------------------------------------------------
 manhattanCost heuristics
 
@@ -342,9 +558,9 @@ T1 T2 T3
 T4 T5 T6 
 T7 T8 B 
 
-Total number of states explored : 146
+Total number of states explored : 72
 
-Total number of states to optimal path :  46
+Total number of states to optimal path :  48
 
 Optimal Path :
 T8 T6 T7 
@@ -448,93 +664,101 @@ T4 T5 T8
 T7 B T6 
 
 T1 T3 T2 
-T4 T5 T8 
-T7 T6 B 
+T4 B T8 
+T7 T5 T6 
 
 T1 T3 T2 
-T4 T5 B 
-T7 T6 T8 
+T4 T8 B 
+T7 T5 T6 
 
-T1 T3 B 
-T4 T5 T2 
-T7 T6 T8 
+T1 T3 T2 
+T4 T8 T6 
+T7 T5 B 
 
-T1 B T3 
-T4 T5 T2 
-T7 T6 T8 
+T1 T3 T2 
+T4 T8 T6 
+T7 B T5 
 
-T1 T5 T3 
-T4 B T2 
-T7 T6 T8 
-
-T1 T5 T3 
-T4 T6 T2 
-T7 B T8 
-
-T1 T5 T3 
-T4 T6 T2 
-T7 T8 B 
-
-T1 T5 T3 
-T4 T6 B 
-T7 T8 T2 
-
-T1 T5 T3 
+T1 T3 T2 
 T4 B T6 
-T7 T8 T2 
+T7 T8 T5 
 
-T1 B T3 
-T4 T5 T6 
-T7 T8 T2 
+T1 B T2 
+T4 T3 T6 
+T7 T8 T5 
 
-T1 T3 B 
-T4 T5 T6 
-T7 T8 T2 
+T1 T2 B 
+T4 T3 T6 
+T7 T8 T5 
 
-T1 T3 T6 
+T1 T2 T6 
+T4 T3 B 
+T7 T8 T5 
+
+T1 T2 T6 
+T4 T3 T5 
+T7 T8 B 
+
+T1 T2 T6 
+T4 T3 T5 
+T7 B T8 
+
+T1 T2 T6 
+T4 B T5 
+T7 T3 T8 
+
+T1 T2 T6 
 T4 T5 B 
-T7 T8 T2 
+T7 T3 T8 
 
-T1 T3 T6 
-T4 T5 T2 
-T7 T8 B 
+T1 T2 B 
+T4 T5 T6 
+T7 T3 T8 
 
-T1 T3 T6 
-T4 T5 T2 
-T7 B T8 
+T1 B T2 
+T4 T5 T6 
+T7 T3 T8 
 
-T1 T3 T6 
-T4 B T2 
-T7 T5 T8 
-
-T1 T3 T6 
-T4 T2 B 
-T7 T5 T8 
-
-T1 T3 B 
-T4 T2 T6 
-T7 T5 T8 
-
-T1 B T3 
-T4 T2 T6 
-T7 T5 T8 
-
-T1 T2 T3 
+T1 T5 T2 
 T4 B T6 
-T7 T5 T8 
+T7 T3 T8 
+
+T1 T5 T2 
+T4 T3 T6 
+T7 B T8 
+
+T1 T5 T2 
+T4 T3 T6 
+T7 T8 B 
+
+T1 T5 T2 
+T4 T3 B 
+T7 T8 T6 
+
+T1 T5 T2 
+T4 B T3 
+T7 T8 T6 
+
+T1 B T2 
+T4 T5 T3 
+T7 T8 T6 
+
+T1 T2 B 
+T4 T5 T3 
+T7 T8 T6 
 
 T1 T2 T3 
-T4 T5 T6 
-T7 B T8 
+T4 T5 B 
+T7 T8 T6 
 
 T1 T2 T3 
 T4 T5 T6 
 T7 T8 B 
 
 
-Optimal Path Cost : 45
+Optimal Path Cost : 47
 
-Time Taken For Execution : 0.020000219345092773 seconds
+Time Taken For Execution : 0.007997751235961914 seconds
 -----------------------------------------------------
 Running Astar on the puzzle tile configuration
 
@@ -688,7 +912,7 @@ T7 T8 B
 
 Optimal Path Cost : 31
 
-Time Taken For Execution : 15.512041330337524 seconds
+Time Taken For Execution : 11.95996356010437 seconds
 -----------------------------------------------------
 manhattanCost heuristics
 
@@ -840,5 +1064,5 @@ T7 T8 B
 
 Optimal Path Cost : 31
 
-Time Taken For Execution : 3.3079609870910645 seconds
+Time Taken For Execution : 2.3520350456237793 seconds
 -----------------------------------------------------

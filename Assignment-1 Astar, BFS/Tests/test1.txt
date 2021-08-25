@@ -14,9 +14,9 @@ T1 T2 T3
 T8 B T4 
 T7 T6 T5 
 
-Total number of states explored : 606
+Total number of states explored : 521
 
-Total number of states to optimal path :  85
+Total number of states to optimal path :  71
 
 Optimal Path :
 T8 T3 T5 
@@ -51,185 +51,129 @@ T1 B T3
 T8 T4 T5 
 T2 T7 T6 
 
-T1 T3 B 
-T8 T4 T5 
-T2 T7 T6 
-
-T1 T3 T5 
-T8 T4 B 
-T2 T7 T6 
-
-T1 T3 T5 
-T8 B T4 
-T2 T7 T6 
-
-T1 T3 T5 
-T8 T7 T4 
-T2 B T6 
-
-T1 T3 T5 
-T8 T7 T4 
-T2 T6 B 
-
-T1 T3 T5 
-T8 T7 B 
-T2 T6 T4 
-
-T1 T3 B 
-T8 T7 T5 
-T2 T6 T4 
-
-T1 B T3 
-T8 T7 T5 
-T2 T6 T4 
-
-T1 T7 T3 
+T1 T4 T3 
 T8 B T5 
-T2 T6 T4 
+T2 T7 T6 
 
-T1 T7 T3 
-T8 T5 B 
-T2 T6 T4 
-
-T1 T7 T3 
-T8 T5 T4 
-T2 T6 B 
-
-T1 T7 T3 
-T8 T5 T4 
+T1 T4 T3 
+T8 T7 T5 
 T2 B T6 
 
-T1 T7 T3 
-T8 T5 T4 
-B T2 T6 
+T1 T4 T3 
+T8 T7 T5 
+T2 T6 B 
 
-T1 T7 T3 
-B T5 T4 
-T8 T2 T6 
+T1 T4 T3 
+T8 T7 B 
+T2 T6 T5 
 
-T1 T7 T3 
-T5 B T4 
-T8 T2 T6 
-
-T1 T7 T3 
-T5 T2 T4 
-T8 B T6 
-
-T1 T7 T3 
-T5 T2 T4 
-T8 T6 B 
-
-T1 T7 T3 
-T5 T2 B 
-T8 T6 T4 
-
-T1 T7 T3 
-T5 B T2 
-T8 T6 T4 
-
-T1 T7 T3 
-B T5 T2 
-T8 T6 T4 
-
-T1 T7 T3 
-T8 T5 T2 
-B T6 T4 
-
-T1 T7 T3 
-T8 T5 T2 
-T6 B T4 
-
-T1 T7 T3 
-T8 B T2 
-T6 T5 T4 
-
-T1 T7 T3 
-T8 T2 B 
-T6 T5 T4 
-
-T1 T7 T3 
-T8 T2 T4 
-T6 T5 B 
-
-T1 T7 T3 
-T8 T2 T4 
-T6 B T5 
-
-T1 T7 T3 
-T8 T2 T4 
-B T6 T5 
-
-T1 T7 T3 
-B T2 T4 
-T8 T6 T5 
-
-T1 T7 T3 
-T2 B T4 
-T8 T6 T5 
+T1 T4 T3 
+T8 B T7 
+T2 T6 T5 
 
 T1 B T3 
-T2 T7 T4 
-T8 T6 T5 
+T8 T4 T7 
+T2 T6 T5 
+
+T1 T3 B 
+T8 T4 T7 
+T2 T6 T5 
+
+T1 T3 T7 
+T8 T4 B 
+T2 T6 T5 
+
+T1 T3 T7 
+T8 B T4 
+T2 T6 T5 
+
+T1 B T7 
+T8 T3 T4 
+T2 T6 T5 
+
+B T1 T7 
+T8 T3 T4 
+T2 T6 T5 
+
+T8 T1 T7 
+B T3 T4 
+T2 T6 T5 
+
+T8 T1 T7 
+T3 B T4 
+T2 T6 T5 
+
+T8 B T7 
+T3 T1 T4 
+T2 T6 T5 
+
+T8 T7 B 
+T3 T1 T4 
+T2 T6 T5 
+
+T8 T7 T4 
+T3 T1 B 
+T2 T6 T5 
+
+T8 T7 T4 
+T3 B T1 
+T2 T6 T5 
+
+T8 T7 T4 
+B T3 T1 
+T2 T6 T5 
+
+B T7 T4 
+T8 T3 T1 
+T2 T6 T5 
+
+T7 B T4 
+T8 T3 T1 
+T2 T6 T5 
+
+T7 T3 T4 
+T8 B T1 
+T2 T6 T5 
+
+T7 T3 T4 
+T8 T1 B 
+T2 T6 T5 
+
+T7 T3 B 
+T8 T1 T4 
+T2 T6 T5 
+
+T7 B T3 
+T8 T1 T4 
+T2 T6 T5 
+
+T7 T1 T3 
+T8 B T4 
+T2 T6 T5 
+
+T7 T1 T3 
+B T8 T4 
+T2 T6 T5 
 
 B T1 T3 
-T2 T7 T4 
-T8 T6 T5 
+T7 T8 T4 
+T2 T6 T5 
 
-T2 T1 T3 
-B T7 T4 
-T8 T6 T5 
-
-T2 T1 T3 
-T8 T7 T4 
-B T6 T5 
-
-T2 T1 T3 
-T8 T7 T4 
-T6 B T5 
-
-T2 T1 T3 
-T8 B T4 
-T6 T7 T5 
-
-T2 B T3 
-T8 T1 T4 
-T6 T7 T5 
-
-B T2 T3 
-T8 T1 T4 
-T6 T7 T5 
-
-T8 T2 T3 
-B T1 T4 
-T6 T7 T5 
-
-T8 T2 T3 
-T1 B T4 
-T6 T7 T5 
-
-T8 B T3 
-T1 T2 T4 
-T6 T7 T5 
-
-B T8 T3 
-T1 T2 T4 
-T6 T7 T5 
+T1 B T3 
+T7 T8 T4 
+T2 T6 T5 
 
 T1 T8 T3 
-B T2 T4 
-T6 T7 T5 
+T7 B T4 
+T2 T6 T5 
 
 T1 T8 T3 
-T6 T2 T4 
-B T7 T5 
+T7 T6 T4 
+T2 B T5 
 
 T1 T8 T3 
-T6 T2 T4 
-T7 B T5 
-
-T1 T8 T3 
-T6 B T4 
-T7 T2 T5 
+T7 T6 T4 
+B T2 T5 
 
 T1 T8 T3 
 B T6 T4 
@@ -360,9 +304,9 @@ T8 B T4
 T7 T6 T5 
 
 
-Optimal Path Cost : 84
+Optimal Path Cost : 70
 
-Time Taken For Execution : 0.06000041961669922 seconds
+Time Taken For Execution : 0.04000091552734375 seconds
 -----------------------------------------------------
 manhattanCost heuristics
 
@@ -532,7 +476,7 @@ T7 T6 T5
 
 Optimal Path Cost : 14
 
-Time Taken For Execution : 0.015999794006347656 seconds
+Time Taken For Execution : 0.01599597930908203 seconds
 -----------------------------------------------------
 manhattanCost heuristics
 
@@ -616,5 +560,5 @@ T7 T6 T5
 
 Optimal Path Cost : 14
 
-Time Taken For Execution : 0.003999233245849609 seconds
+Time Taken For Execution : 0.0 seconds
 -----------------------------------------------------
