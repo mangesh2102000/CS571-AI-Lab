@@ -26,6 +26,9 @@ class HillClimbing:
 		def __lt__(self, other):
 			return self.value < other.value
 
+		def __le__(self, other):
+			return self.value <= other.value
+
 		def findNeighbours(self):
 			blankX, blankY = Puzzle.findCell(self.puzzle.puzzleConfig, 0)
 			swap_pos = [(-1,0),(1,0),(0,1),(0,-1)]
@@ -38,7 +41,7 @@ class HillClimbing:
 				if(newX < 0 or newY < 0 or newX == 3 or newY == 3):
 					continue
 
-				newPuzzle = currNode.puzzle.newConfig(blankX,blankY,newX,newY)
+				newPuzzle = self.puzzle.newConfig(blankX,blankY,newX,newY)
 				neighbours.append(newPuzzle)
 
 			return neighbours
@@ -66,6 +69,7 @@ class HillClimbing:
 
 			bestNode = None
 			for newPuzzle in neighbours:
+
 				if newPuzzle in self.distance:
 					continue
 				h_n = self.heuristicFunc(newPuzzle)
@@ -73,14 +77,12 @@ class HillClimbing:
 
 				if bestNode and newNode <= bestNode:
 					bestNode = newNode
-
 				elif not bestNode and newNode <= currNode:
 					bestNode = newNode
 
 			currNode = bestNode
 			if currNode:
 				self.distance[currNode.puzzle] = g_n + 1
-
 
 		# Store path from START_STATE to GOAL_STATE if exists
 		path = []
