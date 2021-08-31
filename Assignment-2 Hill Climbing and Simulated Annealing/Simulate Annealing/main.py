@@ -90,9 +90,9 @@ def RunSimulatedAnnealing():
             
             print("\nTotal number of states to optimal path : ", len(path))
             
-            #print("\nOptimal Path :")
-            # for step in path:
-            #     print(convertToInputFormat(step.puzzleConfig))
+            print("\nOptimal Path :")
+            for step in path:
+                print(convertToInputFormat(step.puzzleConfig))
 
             print("\nOptimal Path Cost :", len(path)-1)
 
