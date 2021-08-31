@@ -14,31 +14,17 @@
   
 ### Contents 
 
-	main.py : driver code
-	puzzle.py : puzzle Class, heuristic functions
-	Utils.py : complementory functions for input/output
-	StartState : Input file for start state
-	GoalState : Input file for goal state
+	yet to update
 
 ### Usage 
 
 Sample Input :
 
-	StartState 
-	T8 T3 T5 
-	T4 T1 T6 
-	T2 T7 B
-
-	GoalState
-	T1 T2 T3 
-	T8 B T4 
-	T7 T6 T5
-
-Note: Avoid extra whitespaces/newlines while providing input throught these files
+	yet to update
 
 ### Execution :
 
-	python main.py 
+	yet to update
 
 Sample Output :
 
