@@ -49,11 +49,10 @@ class SimulatedAnnealing:
 				if(newX < 0 or newY < 0 or newX == 3 or newY == 3):
 					continue
 
-				newPuzzle = currNode.puzzle.newConfig(blankX,blankY,newX,newY)
+				newPuzzle = self.puzzle.newConfig(blankX,blankY,newX,newY)
 				neighbours.append(newPuzzle)
 
 			return neighbours
-
 
 
 	def run(self):
@@ -63,10 +62,9 @@ class SimulatedAnnealing:
 		h_n = self.heuristicFunc(self.puzzle)
 		currTemperature = self.maxTemperature
 		finalTemperature = 0.1
-		distance[self.puzzle] = 0
 		currNode = self.Node(h_n, self.puzzle)
 
-		while currTemprature > finalTemperature:			
+		while currTemperature > finalTemperature:			
 			# Goal State Reached
 			if currNode.puzzle.isGoal():
 				break
@@ -83,11 +81,12 @@ class SimulatedAnnealing:
 
 			if newNode <= currNode:
 				currNode = newNode
-
 			else:
-				probability = calcProbability(newNode.value-currNode.value, currTemprature)
+				probability = calcProbability(newNode.value-currNode.value, currTemperature)
 				if random.uniform(0,1) <= probability:
 					currNode = newNode
+
+			currTemprature = coolingFunc(currTemperature)
 
 
 		# Store path from START_STATE to GOAL_STATE if exists
