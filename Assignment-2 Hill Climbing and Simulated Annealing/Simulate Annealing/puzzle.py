@@ -95,10 +95,18 @@ def manhattanCostWithBlankTile(puzzle: Puzzle):
 def combinationHeuristic(puzzle: Puzzle):
 	return displaceCost(Puzzle)*manhattanCost(Puzzle);
 
-heuristicFuncList = {
-	"displaceCost": displaceCost,
-	"manhattanCost": manhattanCost,
-	"displaceCostWithBlankTile" : displaceCostWithBlankTile,
-	"manhattanCostWithBlankTile" : manhattanCostWithBlankTile,
-	"combinationHeuristic" : combinationHeuristic
-}
+heuristicFuncList = [
+	displaceCost,
+	manhattanCost,
+	displaceCostWithBlankTile,
+	manhattanCostWithBlankTile,
+	combinationHeuristic
+]
+
+heuristics = [
+	"displaceCost",
+	"manhattanCost",
+	"displaceCostWithBlankTile",
+	"manhattanCostWithBlankTile",
+	"combinationHeuristic"
+]

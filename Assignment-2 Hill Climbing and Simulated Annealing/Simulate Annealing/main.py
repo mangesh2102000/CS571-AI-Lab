@@ -2,8 +2,8 @@
 
 # Import Required Functionalities 
 from Utils import *
-from puzzle import Puzzle, heuristicFuncList
-from HillClimb import HillClimbing
+from puzzle import Puzzle, heuristicFuncList, heuristics
+from SimulatedAnnealing import SimulatedAnnealing
 from time import time
 import sys
 
@@ -27,19 +27,30 @@ if GOAL_STATE:
 start_puzzle = Puzzle(START_STATE)
 
 # Run Algos one by one
-#HillClimbing
-def RunHillClimbing():
+#SimulatedAnnealing
+def RunSimulatedAnnealing():
+    
+    print("\nEnter choice for heuristic")
+    choice = int(input("0. Displced tiles Heuristic.\n1. Manhattan distance Heuristic.\n2. Displaced tile heuristic with blank tile cost included\n3. Manhattan distance heuristic with blank tile cost included\n4. Manhattan and displaced tile combined heuristic\n: "))
+
+    if choice >= 5 or choice < 0:
+        print("Invalid choice")
+        sys.exit()
+
+    maxTemperature = int(input("\nEnter the max temperature : "))
+    cooling_function = int(input("\nEnter Cooling Function Choice\n1. maxTemperature*(0.9**iteration)\n2. maxTemperature/iteration\n: "))
+
     processes = []
-    for heuristic, heuristicFunc in heuristicFuncList.items():
-        processes.append(HillClimbing(heuristic,heuristicFunc,start_puzzle))
-        if len(processes) == 2:
-            break
+    processes.append(SimulatedAnnealing(heuristics[choice],heuristicFuncList[choice],start_puzzle,maxTemperature,cooling_function))
 
-    exec_info = [HillClimbing.run() for HillClimbing in processes]
+    exec_info = [SimulatedAnnealing.run() for SimulatedAnnealing in processes]
 
+    orig_stdout = sys.stdout
+    file = open("output.txt", 'w')
+    sys.stdout = file
     for idx, value in enumerate(exec_info):
         exec_time, path = value
-        print(processes[idx].heuristic,"heuristics")
+        print(heuristics[choice],"heuristics")
         
         path.reverse()
         if not path:
@@ -74,7 +85,9 @@ def RunHillClimbing():
 
             print("\nTime Taken For Execution :", exec_time, "seconds")
             print("-----------------------------------------------------")
+    sys.stdout = orig_stdout
+    file.close()
 
 if __name__ == '__main__':
-    print("Running HillClimbing on the puzzle tile configuration\n")
-    RunHillClimbing()
+    print("\nRunning SimulatedAnnealing on the puzzle tile configuration")
+    RunSimulatedAnnealing()
