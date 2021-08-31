@@ -11,7 +11,6 @@ class HillClimbing:
 		self.heuristic = heuristic
 		self.heuristicFunc = heuristicFunc
 		self.puzzle = puzzle
-		self.distance = {}
 		self.exploredStates = 0
 
 	class Node:
@@ -46,10 +45,10 @@ class HillClimbing:
 
 
 	def run(self):
-
+		distance = {}
 		start_time = time()
 		h_n = self.heuristicFunc(self.puzzle)
-		self.distance[self.puzzle] = 0
+		distance[self.puzzle] = 0
 		currNode = self.Node(h_n, self.puzzle)
 
 		while currNode:			
@@ -59,14 +58,14 @@ class HillClimbing:
 
 			# Increment count of Explored States
 			self.exploredStates += 1
-			g_n = self.distance[currNode.puzzle]
+			g_n = distance[currNode.puzzle]
 
 			#explore adjacent nodes
 			neighbours = currNode.findNeighbours()
 
 			bestNode = None
 			for newPuzzle in neighbours:
-				if newPuzzle in self.distance:
+				if newPuzzle in distance:
 					continue
 				h_n = self.heuristicFunc(newPuzzle)
 				newNode = self.Node(h_n, newPuzzle, currNode)
@@ -79,7 +78,7 @@ class HillClimbing:
 
 			currNode = bestNode
 			if currNode:
-				self.distance[currNode.puzzle] = g_n + 1
+				distance[currNode.puzzle] = g_n + 1
 
 
 		# Store path from START_STATE to GOAL_STATE if exists
