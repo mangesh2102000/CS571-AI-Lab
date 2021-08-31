@@ -26,6 +26,11 @@ if GOAL_STATE:
 
 start_puzzle = Puzzle(START_STATE)
 
+coolingFuncList = [
+    "1. maxTemperature*(0.9**iteration)",
+    "2. maxTemperature/iteration"
+]
+
 # Run Algos one by one
 #SimulatedAnnealing
 def RunSimulatedAnnealing():
@@ -37,7 +42,7 @@ def RunSimulatedAnnealing():
         print("Invalid choice")
         sys.exit()
 
-    maxTemperature = int(input("\nEnter the max temperature : "))
+    maxTemperature = float(input("\nEnter the max temperature : "))
     cooling_function = int(input("\nEnter Cooling Function Choice\n1. maxTemperature*(0.9**iteration)\n2. maxTemperature/iteration\n: "))
 
     processes = []
@@ -62,7 +67,11 @@ def RunSimulatedAnnealing():
             print("Goal State :")
             print(convertToInputFormat(Puzzle.GOAL_STATE))
 
-            print("Total number of states explored before termination :",processes[idx].exploredStates)
+            print("Max temperature :", maxTemperature)
+
+            print("\nCooling Function :", coolingFuncList[cooling_function-1])
+
+            print("\nTotal number of states explored before termination :",processes[idx].exploredStates)
             print("-----------------------------------------------------")
         else:
             print("\nPath exists")
@@ -73,13 +82,17 @@ def RunSimulatedAnnealing():
             print("Goal State :")
             print(convertToInputFormat(Puzzle.GOAL_STATE))
 
-            print("Total number of states explored :",processes[idx].exploredStates)
+            print("Max temperature :", maxTemperature)
+
+            print("\nCooling Function :", coolingFuncList[cooling_function-1])
+
+            print("\nTotal number of states explored :",processes[idx].exploredStates)
             
             print("\nTotal number of states to optimal path : ", len(path))
             
-            print("\nOptimal Path :")
-            for step in path:
-                print(convertToInputFormat(step.puzzleConfig))
+            #print("\nOptimal Path :")
+            # for step in path:
+            #     print(convertToInputFormat(step.puzzleConfig))
 
             print("\nOptimal Path Cost :", len(path)-1)
 

@@ -93,7 +93,7 @@ def manhattanCostWithBlankTile(puzzle: Puzzle):
 	return total_cost
 
 def combinationHeuristic(puzzle: Puzzle):
-	return displaceCost(Puzzle)*manhattanCost(Puzzle);
+	return displaceCost(puzzle)*manhattanCost(puzzle);
 
 heuristicFuncList = [
 	displaceCost,

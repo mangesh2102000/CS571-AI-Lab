@@ -68,7 +68,8 @@ class SimulatedAnnealing:
 		finalTemperature = 0.1
 		currNode = self.Node(h_n, self.puzzle)
 
-		while currTemperature > finalTemperature:			
+		while currTemperature > finalTemperature:	
+
 			# Goal State Reached
 			if currNode.puzzle.isGoal():
 				break
@@ -90,8 +91,8 @@ class SimulatedAnnealing:
 				if random.uniform(0,1) <= probability:
 					currNode = newNode
 
-			currTemprature = coolingFunc(self.maxTemperature, self.exploredStates, self.cooling)
-
+			currTemperature = coolingFunc(self.maxTemperature, self.exploredStates, self.cooling)
+			
 
 		# Store path from START_STATE to GOAL_STATE if exists
 		path = []
