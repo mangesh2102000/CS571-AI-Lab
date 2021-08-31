@@ -1,0 +1,102 @@
+Running HillClimbing on the puzzle tile configuration
+
+displaceCost heuristics
+
+No path available
+
+Start State :
+T8 T3 T5 
+T4 T1 T6 
+T2 T7 B 
+
+Goal State :
+T1 T2 T3 
+T8 B T4 
+T7 T6 T5 
+
+Total number of states explored before termination : 11
+-----------------------------------------------------
+manhattanCost heuristics
+
+Path exists
+
+Start State :
+T8 T3 T5 
+T4 T1 T6 
+T2 T7 B 
+
+Goal State :
+T1 T2 T3 
+T8 B T4 
+T7 T6 T5 
+
+Total number of states explored : 14
+
+Total number of states to optimal path :  15
+
+Optimal Path :
+T8 T3 T5 
+T4 T1 T6 
+T2 T7 B 
+
+T8 T3 T5 
+T4 T1 B 
+T2 T7 T6 
+
+T8 T3 B 
+T4 T1 T5 
+T2 T7 T6 
+
+T8 B T3 
+T4 T1 T5 
+T2 T7 T6 
+
+T8 T1 T3 
+T4 B T5 
+T2 T7 T6 
+
+T8 T1 T3 
+B T4 T5 
+T2 T7 T6 
+
+T8 T1 T3 
+T2 T4 T5 
+B T7 T6 
+
+T8 T1 T3 
+T2 T4 T5 
+T7 B T6 
+
+T8 T1 T3 
+T2 T4 T5 
+T7 T6 B 
+
+T8 T1 T3 
+T2 T4 B 
+T7 T6 T5 
+
+T8 T1 T3 
+T2 B T4 
+T7 T6 T5 
+
+T8 T1 T3 
+B T2 T4 
+T7 T6 T5 
+
+B T1 T3 
+T8 T2 T4 
+T7 T6 T5 
+
+T1 B T3 
+T8 T2 T4 
+T7 T6 T5 
+
+T1 T2 T3 
+T8 B T4 
+T7 T6 T5 
+
+
+Optimal Path Cost : 14
+
+Time Taken For Execution : 0.000982522964477539 seconds
+-----------------------------------------------------
