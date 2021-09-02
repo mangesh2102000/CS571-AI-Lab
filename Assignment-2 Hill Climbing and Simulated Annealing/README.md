@@ -14,7 +14,21 @@
   
 ### Contents 
 
-	yet to update
+-> Hill Climbing Algorithm
+	* main.py : driver code
+	* puzzle.py : puzzle Class, heuristic functions
+	* Utils.py : complementory functions for input/output
+	* HillClimb.py : Astar algorithm Class
+	* StartState : Input file for start state
+	* GoalState : Input file for goal state
+
+-> Simulated Annealing Algorithm
+	* main.py : driver code
+	* puzzle.py : puzzle Class, heuristic functions
+	* Utils.py : complementory functions for input/output
+	* HillClimb.py : Astar algorithm Class
+	* StartState : Input file for start state
+	* GoalState : Input file for goal state
 
 ### Usage 
 
