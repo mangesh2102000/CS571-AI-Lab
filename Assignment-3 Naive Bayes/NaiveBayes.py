@@ -51,8 +51,8 @@ def kfoldDivision(k, data):
 
 def multinomialNB(trainData, testData):
 	wordList, countArray = trainClassifier(trainData)
-	totalSum = np.sum(countArray)
 	class_counts = np.sum(countArray, axis=0).astype('float64')
+	totalSum = np.sum(class_counts)
 	class_counts /= totalSum
 	true_pred = 0
 	# P(ham/sentence) = P(ham)*P(sentence/ham)/P(sentence)
@@ -83,10 +83,11 @@ def multinomialNB(trainData, testData):
 def multivariateNB(trainData, testData):
 	wordList, countArray = trainClassifier(trainData)
 	class_counts = np.sum(countArray, axis=0).astype('float64')
+	totalSum = np.sum(class_counts)
 	true_pred = 0
 
 	for sample in testData:
-		probabilities = class_counts
+		probabilities = class_counts/totalSum
 		words = word_tokenize(sample[0])
 		for word, position in wordList.items():
 			prob = countArray[position]/class_counts
