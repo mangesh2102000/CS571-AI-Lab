@@ -56,8 +56,7 @@ def multinomialNB(trainData, testData):
 	class_counts /= totalSum
 	true_pred = 0
 	# P(ham/sentence) = P(ham)*P(sentence/ham)/P(sentence)
-	#				  = n(ham)/n(total) * n(sentence/ham)/n(sentence)
-	# Since we want only the max index, we can ignore P(sentence), n(sentence) and n(total)
+	
 	for sample in testData:
 		words = word_tokenize(sample[0])
 		probabilities = class_counts
@@ -70,7 +69,7 @@ def multinomialNB(trainData, testData):
 				probabilities = probabilities*countArray[position]
 				word_counts = np.sum(countArray[position])
 				probabilities /= word_counts
-				
+
 		max_pos = np.argmax(probabilities)
 		if sample[1] == classes[max_pos]:
 			true_pred += 1
