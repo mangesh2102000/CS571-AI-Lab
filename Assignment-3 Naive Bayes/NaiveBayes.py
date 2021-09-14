@@ -56,7 +56,7 @@ def multinomialNB(trainData, testData):
 	class_counts /= totalSum
 	true_pred = 0
 	# P(ham/sentence) = P(ham)*P(sentence/ham)/P(sentence)
-	
+
 	for sample in testData:
 		words = word_tokenize(sample[0])
 		probabilities = class_counts
@@ -80,8 +80,26 @@ def multinomialNB(trainData, testData):
 
 
 
-def multivariateNB(para):
-	pass
+def multivariateNB(trainData, testData):
+	wordList, countArray = trainClassifier(trainData)
+	class_counts = np.sum(countArray, axis=0).astype('float64')
+	true_pred = 0
+
+	for sample in testData:
+		probabilities = class_counts
+		words = word_tokenize(sample[0])
+		for word, position in wordList.items():
+			prob = countArray[position]/class_counts
+			if word not in words:
+				prob = 1 - prob
+			probabilities = probabilities * prob
+
+		max_pos = np.argmax(probabilities)
+		if sample[1] == classes[max_pos]:
+			true_pred += 1
+
+	accuracy = true_pred/len(testData)
+	return accuracy
 
 def takeInput(filename):
 	fin = open(filename, 'r')
@@ -96,24 +114,49 @@ def takeInput(filename):
 data = takeInput('SMSSpamCollection')
 data_pieces = kfoldDivision(5, data)
 
-avg_accuracy = 0
-for idx, testData in enumerate(data_pieces):
-	trainData = []
-	for i, samples in enumerate(data_pieces):
-		if i == idx:
-			continue
-		for sample in samples:
-			trainData.append(sample)
+def runMultinomialNB():
+	print("\n\n\nRunning multinomialNB classifier")
+	avg_accuracy = 0
+	for idx, testData in enumerate(data_pieces):
+		trainData = []
+		for i, samples in enumerate(data_pieces):
+			if i == idx:
+				continue
+			for sample in samples:
+				trainData.append(sample)
+		print("---------------------------------------------------------")
+		print(f"Calculating accuracy for {idx+1} datafold as testData...")
+		accuracy = multinomialNB(trainData,testData)
+		print("Accuracy:",accuracy)
+		avg_accuracy += accuracy
+
+	avg_accuracy /= len(data_pieces)
 	print("---------------------------------------------------------")
-	print(f"Calculating accuracy for {idx+1} datafold as testData...")
-	accuracy = multinomialNB(trainData,testData)
-	print("Accuracy:",accuracy)
-	avg_accuracy += accuracy
+	print("5-fold accuracy:",avg_accuracy)
 
-avg_accuracy /= len(data_pieces)
-print("---------------------------------------------------------")
-print("5-fold accuracy:",avg_accuracy)
+def runMultivariateNB():
+	print("\n\n\nRunning multivariateNB classifier")
+	avg_accuracy = 0
+	for idx, testData in enumerate(data_pieces):
+		trainData = []
+		for i, samples in enumerate(data_pieces):
+			if i == idx:
+				continue
+			for sample in samples:
+				trainData.append(sample)
+		print("---------------------------------------------------------")
+		print(f"Calculating accuracy for {idx+1} datafold as testData...")
+		accuracy = multivariateNB(trainData,testData)
+		print("Accuracy:",accuracy)
+		avg_accuracy += accuracy
 
+	avg_accuracy /= len(data_pieces)
+	print("---------------------------------------------------------")
+	print("5-fold accuracy:",avg_accuracy)
+
+if __name__ == '__main__':
+	runMultinomialNB()
+	runMultivariateNB()
 
 
 
