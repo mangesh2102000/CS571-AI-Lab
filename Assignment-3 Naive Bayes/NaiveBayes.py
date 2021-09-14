@@ -1,4 +1,5 @@
 from nltk.tokenize import word_tokenize
+import random
 import numpy as np
 
 classes = ['ham','spam']
@@ -36,8 +37,21 @@ def trainClassifier(data):
 
 	return wordList, np.array(totalCount)
 
-def multinomialNB(para):
-	pass
+def kfoldDivision(k,data):
+	dataSize = (k-1+len(data))//k
+	data_pieces = []
+	for start in range(0,len(data),dataSize)
+		end = min(start+dataSize,len(data))
+		data_pieces.append(data[start:end])
+
+	return data_pieces
+
+def multinomialNB(trainData, testData):
+	wordList, countArray = trainClassifier(trainData)
+	accuracy = None
+	return accuracy
+
+
 
 def multivariateNB(para):
 	pass
@@ -51,8 +65,18 @@ def takeInput(filename):
 
 	return trainData
 
-trainData = takeInput('SMSSpamCollection')
-wordList, countArray = trainClassifier(trainData)
+data = takeInput('SMSSpamCollection')
+data_pieces = kfoldDivision(5, data)
+
+for idx, testData in enumerate(data_pieces):
+	trainData = []
+	for i, samples in enumerate(data_pieces):
+		if i == idx:
+			continue
+		for sample in samples:
+			trainData.append(sample)
+
+	accuracy = multinomialNB(trainData,testData)
 
 
 
