@@ -26,8 +26,8 @@
 python NaiveBayes.py
 ```
 
-Sample Output :
+### Sample Output :
 
 	Check Output.txt
 
-Thank You
+### Thank You
