@@ -69,26 +69,4 @@ class MultinomialNB:
 
 		max_pos = np.argmax(probability)
 		return self.classes[max_pos]
-
-def multinomialNB(trainData, testData):
-	vocabulary, probOfClass, probWordInClass = trainMultinomial(trainData)
-
-	true_pred = 0
-
-	for doc in testData:
-		words = word_tokenize(doc[0])
-		probability = np.log(probOfClass)
-		for word in words:
-			if word in vocabulary:
-				pos = vocabulary[word]
-				probability += np.log(probWordInClass[pos])
-			# for words not in vocabulary, the unrecognizable words
-			# are ignored
-
-		max_pos = np.argmax(probability)
-		if doc[1] == classes[max_pos]:
-			true_pred += 1
-
-	accuracy = true_pred/len(testData)
-
 	
