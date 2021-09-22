@@ -24,7 +24,7 @@ Accuracy: 0.9856373429084381
 
 
 
-Running multinomialNB classifier
+Running multivariateNB classifier
 ---------------------------------------------------------
 Calculating accuracy for 1 datafold as testData...
 Accuracy: 0.9730941704035875
