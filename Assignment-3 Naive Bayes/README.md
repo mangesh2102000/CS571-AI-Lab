@@ -18,12 +18,14 @@
 	* Makefile : installs all dependencies
 	* requirements.txt : lists all dependencies
 	* SMSSpamCollection : Training as well as Test Data 
-	* NaiveBayes.py : contains both multinomial and multivariate model implementation
+	* main.py : driver code
+	* multinomialNB.py : multinomialNB implementation
+	* multivariateNB.py : multivariateNB implementation
 	* Output.txt : contains results for both classifiers
 
 ### Execution :
 ```
-python NaiveBayes.py
+python main.py
 ```
 
 ### Sample Output :
