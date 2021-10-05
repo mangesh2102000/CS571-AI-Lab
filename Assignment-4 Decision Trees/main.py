@@ -93,7 +93,7 @@ def get10FoldCVResult():
 	print("Avg. F-Score:", getMean(f_score))
 
 
-# get10FoldCVResult()
+get10FoldCVResult()
 
 testData, tavgLen, tUnigrams, tBigrams, tTrigrams, tPostags = processInput("testdata.txt")
 
@@ -132,7 +132,7 @@ def featureAblationReport():
 
 		print("Accuracy Report:", accuracy_report)
 
-# featureAblationReport()
+featureAblationReport()
 
 criteria = ['entropy','gini','miserror']
 
