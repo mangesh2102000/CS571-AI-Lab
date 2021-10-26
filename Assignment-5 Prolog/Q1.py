@@ -87,7 +87,7 @@ def split_clauses(query, values):
 if __name__ == "__main__":
 	flag = 0
 	query = str(input("Enter a Query: "))
-	variable = set([x for x in query if x not in ['=', '>', '~', ')', '(', '^', 'V']])
+	variable = set([x for x in query if x not in ['=', '>', '~', ')', '(', '^', 'v']])
 	for i in range(2**len(variable)):
 		values = {}
 		values['0'] = '0'
