@@ -37,17 +37,17 @@ def solve(exp, values):
 		idx += 1
 
 	if left[0] == '~':
-		left_value = values[left[1]]
+		left_value = (str((int(values[left[1]]) + 1) % 2))
 	else :
-		left_value = values[left[0]]
+		left_value = (str((int(values[left[0]])) % 2))
 
 	if right[0] == '~':
-		right_value = values[right[1]]
+		right_value = (str((int(values[right[1]]) + 1) % 2))
 	else :
-		right_value = values[right[0]]
+		right_value = (str((int(values[right[0]])) % 2))
 
 	res = OPERATION[operation](int(left_value),int(right_value))
-	return str(res);
+	return str(int(res));
 
 
 def simplify(query, values):
@@ -78,8 +78,8 @@ def split_clauses(query, values):
 			stack.append(c)
 
 	if("=>" in query):
-		left = query[:i+1]
-		right = query[i+3:]
+		left = query[:index+1]
+		right = query[index+3:]
 		if(simplify(left, values)):
 			if(not simplify(right, values)):
 				return("Not Theorem")
@@ -93,8 +93,8 @@ if __name__ == "__main__":
 		values['0'] = '0'
 		values['1'] = '1'
 		temp = format(i, '0'+str(len(variable))+'b')
-		for i, c in enumerate(variable):
-			values[c] = temp[i]
+		for idx, c in enumerate(variable):
+			values[c] = temp[idx]
 		if(split_clauses(query, values) == "Not Theorem"):
 			flag = 1
 	if(flag):
